@@ -1,0 +1,98 @@
+Constants:
+valueArray: count=3, capacity=8
+0 -> 1 (id: 38)
+1 -> 2 (id: 41)
+2 -> none object (id: 33)
+refTable{print:4, n:0, result:1, x:3, fib:2}
+Chunk Set Index Array [3]: 0 1 3
+localIndexArray [5]: 0 1 -1 2 -1
+
+Function "fib" defined (in: 1, out: 1):
+Chunk: count=27, capacity=32
+0: OP_GET_COMBINED_REF_ATTR
+    LocalRefArrayIndex -> 0
+    GlobalRefArrayIndex -> 2
+    (line: 1, index: 8)
+1: OP_CONSTANT
+    Var1 -> 1 (constant #0)
+    (line: 1, index: 13)
+2: OP_LESS_EQUAL
+    (line: 1, index: 11)
+3: OP_JUMP_IF_FALSE
+    Line[6]
+    (line: 1, index: 4)
+4: OP_GET_COMBINED_REF_ATTR
+    LocalRefArrayIndex -> 0
+    GlobalRefArrayIndex -> 2
+    (line: 2, index: 15)
+5: OP_RETURN
+    (line: 2, index: 8)
+6: OP_GET_COMBINED_REF_ATTR
+    LocalRefArrayIndex -> 2
+    GlobalRefArrayIndex -> 1
+    (line: 5, index: 13)
+7: OP_GET_COMBINED_REF_ATTR
+    LocalRefArrayIndex -> 0
+    GlobalRefArrayIndex -> 2
+    (line: 5, index: 17)
+8: OP_CONSTANT
+    Var1 -> 1 (constant #0)
+    (line: 5, index: 21)
+9: OP_SUB
+    (line: 5, index: 19)
+10: OP_EXEC_METHOD_ENFORCE_RETURN
+    NumAttr -> 1
+    (line: 5, index: 16)
+11: OP_GET_COMBINED_REF_ATTR
+    LocalRefArrayIndex -> 2
+    GlobalRefArrayIndex -> 1
+    (line: 5, index: 26)
+12: OP_GET_COMBINED_REF_ATTR
+    LocalRefArrayIndex -> 0
+    GlobalRefArrayIndex -> 2
+    (line: 5, index: 30)
+13: OP_CONSTANT
+    Var1 -> 2 (constant #1)
+    (line: 5, index: 34)
+14: OP_SUB
+    (line: 5, index: 32)
+15: OP_EXEC_METHOD_ENFORCE_RETURN
+    NumAttr -> 1
+    (line: 5, index: 29)
+16: OP_ADD
+    (line: 5, index: 24)
+17: OP_SET_COMBINED_REF_ATTR
+    LocalRefArrayIndex -> 1
+    GlobalRefArrayIndex -> 3
+    Var3 -> No special assignment
+    (line: 5, index: 11)
+18: OP_CONSTANT
+    Var1 -> 1 (constant #0)
+    (line: 6, index: 8)
+19: OP_SET_COMBINED_REF_ATTR
+    LocalRefArrayIndex -> 3
+    GlobalRefArrayIndex -> 4
+    Var3 -> No special assignment
+    (line: 6, index: 6)
+20: OP_GET_COMBINED_REF_ATTR
+    LocalRefArrayIndex -> 4
+    GlobalRefArrayIndex -> 0
+    (line: 7, index: 4)
+21: OP_GET_COMBINED_REF_ATTR
+    LocalRefArrayIndex -> 3
+    GlobalRefArrayIndex -> 4
+    (line: 7, index: 10)
+22: OP_EXEC_METHOD_IGNORE_RETURN
+    NumAttr -> 1
+    (line: 7, index: 9)
+23: OP_GET_COMBINED_REF_ATTR
+    LocalRefArrayIndex -> 1
+    GlobalRefArrayIndex -> 3
+    (line: 8, index: 11)
+24: OP_RETURN
+    (line: 8, index: 4)
+25: OP_CONSTANT
+    Var1 -> none object (constant #2)
+    (line: 9, index: 0)
+26: OP_RETURN
+    (line: 9, index: 0)

@@ -1,0 +1,69 @@
+Class:
+
+    Class (Identifier)? {
+        void? method Identifier (Identifier*) {
+            statement*
+        }*
+    }
+
+Function:
+
+    void? function Identifier (Identifier*) {
+        statement*
+    }
+
+Statements: // Exactly net-zero influence to stack size
+
+    Exp(Exp) // Ignore return function / method call.
+    Exp = Exp // Variable assignment / inc&dec operators
+    if (Exp) { statement* } elif (Exp) { statement* }* else { statement }?
+    while (Exp) { statement* }
+    for (statement; Exp; statement) { statement* }
+    return Exp?
+
+Expressions: // Evaluates to exactly a single object
+
+    Exp(Exp) // Non-void return function / method methodCall
+    Exp.Exp
+    Exp[Exp]
+    Global Exp
+    (Exp)
+    Exp arithmetic Exp
+    Exp logical Exp
+    ! Exp
+    Exp comparison Exp
+    new Identifier (Exp*)? // Class object create&init?
+
+Object declaration:
+
+    ""
+    0.0
+    True
+    False
+    [Exp*]
+    {Exp*}
+    <Exp:Exp*>
+
+
+Bytecode Assignments:
+    Set Global: Stack [Value] Chunk [SetGlobal, identifier, specialAssignment]
+    Set Local: Stack [Value] Chunk [SetLocal, identifier, specialAssignment]
+    Set Attr: Stack [object, Value] Chunk [SetAttr, identifier, specialAssignment]
+    Set Index: Stack [object, index, Value] Chunk [specialAssignment]
+
+    Options: 0 = None, 1 = left_hand_payload, 2 = right_hand_payload
+
+    OP_ADD: OP[8] Option[0, 1, 2] Payload[32]
+    OP_SUB: OP[8] Option[0, 1, 2] Payload[32]
+    OP_MUL: OP[8] Option[0, 1] Payload[32]
+    OP_DIV: OP[8] Option[0, 1, 2] Payload[32]
+    OP_MOD: OP[8] Option[0, 1, 2] Payload[32]
+    OP_POW: OP[8] Option[0, 1, 2] Payload[32]
+    OP_EQUAL: OP[8] Option[0, 1] Payload[32]
+    OP_LESS: OP[8] Option[0, 1, 2] Payload[32]
+    OP_MORE: OP[8] Option[0, 1, 2] Payload[32]
+    OP_LESS_EQUAL: OP[8] Option[0, 1, 2] Payload[32]
+    OP_MORE_EQUAL: OP[8] Option[0, 1, 2] Payload[32]
+
+    Right hand: [None, Payload, Variable] Left hand: [None, Payload, Variable]
+    Total combinations: 3 * 3 = 9
