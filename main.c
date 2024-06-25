@@ -30,6 +30,7 @@ void deleteAllTables() {
 
 
 int main(int argc, const char* argv[]) {
+    // Added useless line
     // Load sourceFile
     if (argc < 3) {
         printf("Usage: [accLib, path]\n");
